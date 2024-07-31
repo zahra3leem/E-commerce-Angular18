@@ -1,0 +1,76 @@
+<section>
+  <div class="container py-2 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 bg-light col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form #LoginForm="ngForm" (ngSubmit)="handleSubmitForm()">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #0ae29a;"></i>
+                    <span class="h1 fw-bold mb-0">E-Commerce Website</span>
+                  </div>
+
+
+                  <label class="form-label" for="email">Email address</label>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="email" class="form-control form-control-lg" name="email" required email
+                      [(ngModel)]="form.email" #email="ngModel" />
+                    <div *ngIf="email?.touched && email?.invalid" class="text-form text-danger">
+                      <div *ngIf="email?.errors?.['required']">
+                        <small>email is required.</small>
+                      </div>
+                      <div *ngIf="email?.errors?.['email']">
+                        <small>email is not valid!</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <label class="form-label" for="password">Password</label>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="password" id="password" class="form-control form-control-lg" name="password" required
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8"
+                      [(ngModel)]="form.password" #password="ngModel" />
+                    <div *ngIf="password?.touched && password?.invalid" class="text-form text-danger">
+                      <div *ngIf="password?.errors?.['required']">
+                        <small>Password is required.</small>
+                      </div>
+                      <div *ngIf="password?.errors?.['minlength']">
+                        <small>Password must be at least 8 characters long.</small>
+                      </div>
+                      <div *ngIf="password?.errors?.['pattern']">
+                        <small>Password must contain at least one uppercase letter, one lowercase letter, one number,
+                          and one special
+                          character.</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block "
+                      type="button" [disabled]="LoginForm.invalid">Login</button>
+                  </div>
+                  <div class="text-center">
+
+                    <a class="small text-muted  text-center text-decoration-none" href="#!">Forgot password?</a>
+                  </div>
+                  <p class="mb-5 pb-lg-3 m-5 text-center oo " style="color: #393f81;">Don't have an account?
+                    <a href="#!" class="text-decoration-none" style="color: #393f81;"
+                      [routerLink]="['/regester']"> <strong >Register here</strong></a>
+                  </p>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

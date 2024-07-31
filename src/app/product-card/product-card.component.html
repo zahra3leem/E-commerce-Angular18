@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div class="card bg-light ">
+    <div>
+      @if(product.availabilityStatus == 0){
+        <span
+          class="badge rounded-pill  position-absolute stock-badge  out-stock">
+          Out Of Stock</span>
+        }@else {
+        <span
+          class="badge rounded-pill  position-absolute stock-badge  in-stock">
+          In Stock</span>
+        }
+    </div>
+
+    <img [src]="product.images[0]" class="card-img-top" alt="Wireless Earbuds">
+    <div class="card-body">
+      <h4 class="card-title">{{product.title}}</h4>
+      <p class="card-text text-muted"><small>{{product.tags.join(' ,')}}</small></p>
+      <div class="d-flex align-items-center">
+        <span class="mr-2"><strong>{{product.price}}</strong></span>
+      </div>
+      <div class="my-2">
+        <span class="text-success">
+          <div [innerHTML]="product.rating | rating"></div>
+        </span>
+      </div>
+      <a [routerLink]="['/product-details',product.id]" class="btn btn-outline-secondary rounded-pill">
+        Details</a>
+    </div>
+  </div>
+</div>

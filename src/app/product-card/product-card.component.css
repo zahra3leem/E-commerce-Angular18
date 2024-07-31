@@ -1,0 +1,21 @@
+
+img{
+  width: 300;
+  height: 200px;
+}
+.card {
+  width: 300px;
+  height: 475px;
+}
+.container{
+  font-family: cursive;
+}
+.stock-badge {
+  top: 16px;
+}
+.in-stock{
+  background-color: #23bf23;
+}
+.out-stock{
+background-color: red;
+}

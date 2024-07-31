@@ -1,0 +1,14 @@
+form a {
+  font-size: 20px;
+  color: black;
+}
+form a:hover {
+  color: green;
+}
+section{
+  font-family: cursive;
+  
+}
+nav{
+  height: 50px;
+}

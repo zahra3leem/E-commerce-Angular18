@@ -1,0 +1,45 @@
+<app-cart></app-cart>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product.images[0]" class="img-fluid" alt="Airpods Max">
+      <div class="d-flex justify-content-between mt-3">
+        <img   width="80px" [src]="product.images[0]" class="img-thumbnail" alt="Color Option 1">
+        <img   width="80px"[src]="product.images[0]" class="img-thumbnail" alt="Color Option 2">
+        <img   width="80px"[src]="product.images[0]" class="img-thumbnail" alt="Color Option 3">
+        <img  width="80px"[src]="product.images[0]" class="img-thumbnail" alt="Color Option 4">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2 class="font-weight-bold">{{product.title}}</h2>
+      <p class="text-muted"> {{product.description}}
+      </p>
+      <div class="d-flex align-items-center mb-3">
+        <span class="text-success mr-2"><div [innerHTML]="product.rating | rating"></div></span>
+        <span>(121)</span>
+      </div>
+      <div class="mb-3">
+        <span class="h3">{{product.price}}</span>
+        <span class="text-muted"> <br><s> $99.00</s> </span>
+      </div>
+      <div class="mb-3">
+        <span class="badge badge-success">{{product.availabilityStatus}}</span>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-outline-secondary mr-2">Category</button>
+        <button class="btn btn-outline-secondary m-3">Brand</button>
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <button class="btn btn-outline-secondary">-</button>
+        <input type="number" class="form-control mx-2" value="1" style="width: 60px;">
+        <button class="btn btn-outline-secondary">+</button>
+      </div>
+      <div >
+        <strong>Only <span class="mb-3 text-danger">{{ product.stock}}</span> Items Left! Don't miss it</strong>
+      </div> <hr>
+      <div class="d-flex justify-content-between">
+        <button class="btn  btn-success rounded">Buy Now</button>
+        <button class="btn btn-outline-success" routerLink="['/cart']">Add to Cart</button>
+      </div>
+    </div>
+  </div>
